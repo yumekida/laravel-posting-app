@@ -43,4 +43,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //1人のユーザーは複数の投稿を作成できる
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 }
