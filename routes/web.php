@@ -47,8 +47,4 @@ Route::patch('/posts/{post}',[PostController::class, 'update'])->middleware(['au
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware(['auth','verified'])->name('posts.destroy');
 */
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-
-Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
-
 Route::resource('posts', PostController::class)->middleware(['auth', 'verified']);
